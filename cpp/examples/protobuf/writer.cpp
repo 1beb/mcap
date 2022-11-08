@@ -2,7 +2,6 @@
 // writes a sequence of foxglove.PointCloud messages to an MCAP which should
 // show an expanding sphere when viewed in Foxglove Studio.
 #define MCAP_IMPLEMENTATION
-#define _USE_MATH_DEFINES
 #include "mcap/writer.hpp"
 
 #include <google/protobuf/descriptor.pb.h>

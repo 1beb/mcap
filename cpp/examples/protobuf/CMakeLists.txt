@@ -36,6 +36,7 @@ endif()
 
 add_executable(example_protobuf_writer writer.cpp)
 target_link_libraries(example_protobuf_writer ${CONAN_LIBS} pointcloud_proto_lib)
+target_compile_definitions(example_protobuf_writer PRIVATE _USE_MATH_DEFINES)
 
 add_executable(example_protobuf_dynamic_reader dynamic_reader.cpp)
 target_link_libraries(example_protobuf_dynamic_reader ${CONAN_LIBS} ${Protobuf_LIBRARIES})
