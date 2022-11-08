@@ -39,8 +39,16 @@ target_link_libraries(example_protobuf_writer ${CONAN_LIBS} pointcloud_proto_lib
 
 add_executable(example_protobuf_dynamic_reader dynamic_reader.cpp)
 target_link_libraries(example_protobuf_dynamic_reader ${CONAN_LIBS} ${Protobuf_LIBRARIES})
-target_compile_options(example_protobuf_dynamic_reader PUBLIC -Wno-error=unused-parameter)
+if (MSVC)
+    target_compile_options(example_protobuf_dynamic_reader PUBLIC /wd4100)
+else()
+    target_compile_options(example_protobuf_dynamic_reader PUBLIC -Wno-error=unused-parameter)
+endif()
 
 add_executable(example_protobuf_static_reader static_reader.cpp)
 target_link_libraries(example_protobuf_static_reader ${CONAN_LIBS} pointcloud_proto_lib)
-target_compile_options(example_protobuf_static_reader PUBLIC -Wno-error=unused-parameter)
+if (MSVC)
+    target_compile_options(example_protobuf_static_reader PUBLIC /wd4100)
+else()
+    target_compile_options(example_protobuf_static_reader PUBLIC -Wno-error=unused-parameter)
+endif()

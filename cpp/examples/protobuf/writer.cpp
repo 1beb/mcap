@@ -8,6 +8,7 @@
 
 #include "foxglove/PointCloud.pb.h"
 #include <chrono>
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <fstream>
 #include <iostream>
